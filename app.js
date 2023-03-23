@@ -33,11 +33,18 @@ app.get( '/auth/google/callback',
 app.get('/home', isLoggedIn, (req, res) => {
   res.render('home',{name:req.user.displayName,img_src:req.user.picture});
 });
+app.get('/projects', isLoggedIn, (req, res) => {
+  res.render('projects',{name:req.user.displayName,img_src:req.user.picture});
+});
+app.get('/certification', isLoggedIn, (req, res) => {
+  res.render('certification',{name:req.user.displayName,img_src:req.user.picture});
+});
 
 app.get('/logout', (req, res) => {
-     req.logout();
-    req.session.destroy();
+    // req.logout();
+     req.session.destroy();
      res.render('signIn');
+     
 });
 
 app.get('/auth/google/failure', (req, res) => {
