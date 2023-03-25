@@ -42,6 +42,9 @@ footer div{
     align-items: center;
     justify-content: center;
 }
+.sign_body{
+    background-color: orange;
+}
 
 .btn_div{
     height: 100vh;
