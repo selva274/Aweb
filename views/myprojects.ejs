@@ -1,0 +1,15 @@
+<%-include("./header")-%>
+<body>
+<div class="home_size">
+    
+  <h1>Upload Projects Below</h1>
+   
+</div> 
+<div class="file_form">   
+    <form action="/<%= id%>/myprojects" method="POST" enctype="multipart/form-data">
+        <input type="file" name="images" multiple>
+        <button type="submit">submit</button>
+    </form>
+</div>
+</body>
+<%-include("./footer")-%>

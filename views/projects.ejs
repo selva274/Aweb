@@ -1,7 +1,13 @@
 <%-include("./header")-%>
 <body>
+
 <div class="home_size">
-    <h1>Projects</h1>
+
+  <% for(let s of data){%>
+    <img src="../images/<%= s.img%>">
+ 
+  <%}%>
 </div> 
+
 </body>
 <%-include("./footer")-%>
