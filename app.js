@@ -82,7 +82,7 @@ app.get('/getaccount', isLoggedIn, (req, res) => {
                     connection.query("SELECT * FROM homedetails  where id=?",[id],(err,row)=>{
                         connection.release();
                         if(!err){                       
-                          res.render('home',{id:id,name:name,img:image_src,data:row})
+                          res.render('home',{id:id,name:name,data:row})
                           app.get(`/:${id}/myprojects`,isLoggedIn,(req,res)=>{
                             pool.getConnection((err,connection)=>{
                               if(err)throw err
@@ -91,7 +91,7 @@ app.get('/getaccount', isLoggedIn, (req, res) => {
                                   connection.release();
                                   if(!err){
                                      
-                                     res.render('myprojects',{id:id,name:name,img:image_src,data:row})
+                                     res.render('myprojects',{id:id,name:name,data:row})
                                   }else{
                                       console.log(err)
                                   }
@@ -129,7 +129,7 @@ app.get('/getaccount', isLoggedIn, (req, res) => {
                                   connection.release();
                                   if(!err){
                                      
-                                     res.render('mycertification',{id:id,name:name,img:image_src,data:row})
+                                     res.render('mycertification',{id:id,name:name,data:row})
                                   }else{
                                       console.log(err)
                                   }
@@ -191,7 +191,7 @@ app.get(`/projects`,isLoggedIn,(req,res)=>{
             console.log(s.img)
            }
           //  console.log(id);
-             res.render('projects',{id:id,name:name,img:image_src,data:row})
+             res.render('projects',{id:id,name:name,data:row})
         }else{
             console.log(err)
         }
@@ -212,7 +212,7 @@ app.get(`/certification`,isLoggedIn,(req,res)=>{
           //   console.log(s.img)
           //  }
           //  console.log(id);
-             res.render('certification',{id:id,name:name,img:image_src,data:row})
+             res.render('certification',{id:id,name:name,data:row})
         }else{
             console.log(err)
         }
